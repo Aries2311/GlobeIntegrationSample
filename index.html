@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Speed hints for the embedded globe -->
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="dns-prefetch" href="https://unpkg.com">
+<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.gstatic.com">
+<link rel="preconnect" href="https://firestore.googleapis.com" crossorigin>
+<link rel="dns-prefetch" href="https://firestore.googleapis.com">
+<link rel="preconnect" href="https://securetoken.googleapis.com" crossorigin>
+<link rel="dns-prefetch" href="https://securetoken.googleapis.com">
+<link rel="preconnect" href="https://firebaseinstallations.googleapis.com" crossorigin>
+<link rel="dns-prefetch" href="https://firebaseinstallations.googleapis.com">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B0C10" />
+  <meta name="format-detection" content="telephone=no, address=no, email=no" />
+
+  <title>TrueMatch — Curated Dates for Busy Execs</title>
+  <meta name="description" content="TrueMatch: private, curated introductions. You choose. We arrange." />
+
+  <link rel="icon" href="assets/images/truematch-mark.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
+
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
+</head>
+<body>
+  <!-- (Removed the floating .globe-dock block to prevent duplicate globe) -->
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="TrueMatch home">
+        <img src="assets/images/truematch-mark.svg" alt="TrueMatch logo" class="brand__logo" />
+        <span class="brand__name">TrueMatch</span>
+      </a>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__bar"></span><span class="nav__bar"></span><span class="nav__bar"></span>
+      </button>
+
+      <nav class="nav__menu" aria-label="Primary">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#features">Why Us</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cta" class="btn btn--primary">Get Started Matching</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <h1 class="animate-fade-up">Curated, Private Introductions for Busy Professionals</h1>
+        <p class="lead animate-fade-up delay-1">
+          You choose. We arrange the date—from shortlist to schedule.
+        </p>
+        <div class="hero__cta animate-fade-up delay-2">
+          <a href="#pricing" class="btn btn--primary">Take a Look at the Plans</a>
+          <a href="#how-it-works" class="btn btn--ghost">Learn More</a>
+        </div>
+      </div>
+
+      <div class="globe-embed" aria-label="YH Globe">
+  <iframe
+    id="globeFrame"
+    src="https://aries2311.github.io/GlobeYH/?embed=1&bg=transparent"
+    title="YH Globe"
+    loading="eager"           <!-- was: lazy -->
+    referrerpolicy="no-referrer"
+    allowfullscreen
+  ></iframe>
+</div>
+
+  </section>
+
+  <section id="how-it-works" class="section">
+    <div class="container">
+      <h2 class="section__title">How It Works</h2>
+
+      <div class="carousel" id="how-carousel" data-phone="1" data-tablet="2" data-desktop="2" aria-roledescription="carousel">
+        <div class="carousel__viewport" tabindex="0">
+          <div class="carousel__track">
+            <article class="card step slide" aria-label="Step 1">
+              <div class="step__num">1</div>
+              <h3>Set Your Preferences</h3>
+              <p>Tell us your city, age range, interests, and availability. We’ll curate.</p>
+            </article>
+            <article class="card step slide" aria-label="Step 2">
+              <div class="step__num">2</div>
+              <h3>Receive a Daily Shortlist</h3>
+              <p>Get up to 20 profiles every day. Just tap “Approve” or “Pass.”</p>
+            </article>
+            <article class="card step slide" aria-label="Step 3">
+              <div class="step__num">3</div>
+              <h3>Request a Date</h3>
+              <p>Pick 2–3 times that work. We’ll coordinate and schedule for you.</p>
+            </article>
+            <article class="card step slide" aria-label="Step 4">
+              <div class="step__num">4</div>
+              <h3>Confirm & Refine</h3>
+              <p>We handle confirmations and reminders. After the date, give feedback to sharpen future picks.</p>
+            </article>
+          </div>
+        </div>
+
+        <button class="carousel__btn carousel__btn--prev" aria-label="Previous step">‹</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="Next step">›</button>
+        <div class="carousel__dots" aria-label="Carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">Why Choose Us</h2>
+
+      <div class="carousel" id="features-carousel" data-phone="1" data-tablet="2" data-desktop="2" aria-roledescription="carousel">
+        <div class="carousel__viewport" tabindex="0">
+          <div class="carousel__track">
+            <article class="feature card slide">
+              <h3>Curated Matches</h3>
+              <p>Human + AI curation based on values, interests, and city.</p>
+            </article>
+            <article class="feature card slide">
+              <h3>Privacy-Safe</h3>
+              <p>City-level only. No precise pins. No spam.</p>
+            </article>
+            <article class="feature card slide">
+              <h3>Concierge Scheduling</h3>
+              <p>Tier 3: fully hands-off scheduling, venue shortlist, and reminders.</p>
+            </article>
+            <article class="feature card slide">
+              <h3>Verification</h3>
+              <p>Light verification badges to build trust and safety.</p>
+            </article>
+          </div>
+        </div>
+
+        <button class="carousel__btn carousel__btn--prev" aria-label="Previous feature">‹</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="Next feature">›</button>
+        <div class="carousel__dots" aria-label="Carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 class="section__title">Pricing</h2>
+
+      <div class="carousel" id="pricing-carousel" data-phone="1" data-tablet="2" data-desktop="3" data-static-desktop="true" aria-roledescription="carousel">
+        <div class="carousel__viewport" tabindex="0">
+          <div class="carousel__track">
+            <article class="price-card card slide" data-plan="starter">
+              <h3>Tier 1 — Browse & Daily Leads</h3>
+              <p class="price"><span class="currency">$</span><span class="amount">99</span><span class="period">/7 days</span></p>
+              <ul class="list">
+                <li>20 curated profiles / day (7 days)</li>
+                <li>Approve / Pass</li>
+                <li>City-level proximity</li>
+              </ul>
+              <a href="#cta" class="btn btn--primary btn--block">Choose Tier 1</a>
+            </article>
+
+            <article class="price-card card highlight slide" data-plan="matchflow">
+              <div class="badge">Most Popular</div>
+              <h3>Tier 2 — Monthly Matchflow</h3>
+              <p class="price"><span class="currency">$</span><span class="amount">149</span><span class="period">/14 days</span></p>
+              <ul class="list">
+                <li>20 curated profiles / day (14 days)</li>
+                <li>Priority curation + light nudges</li>
+                <li>City-level proximity</li>
+              </ul>
+              <a href="#cta" class="btn btn--primary btn--block">Choose Tier 2</a>
+            </article>
+
+            <article class="price-card card slide" data-plan="concierge">
+              <h3>Tier 3 — Concierge Dates</h3>
+              <p class="price"><span class="currency">$</span><span class="amount">499</span><span class="period">/month</span></p>
+              <ul class="list">
+                <li>20 curated profiles / day</li>
+                <li>Full concierge outreach & scheduling</li>
+                <li>Target: 4–8 confirmed dates / month</li>
+              </ul>
+              <a href="#cta" class="btn btn--primary btn--block">Choose Tier 3</a>
+            </article>
+          </div>
+        </div>
+
+        <button class="carousel__btn carousel__btn--prev" aria-label="Previous plan">‹</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="Next plan">›</button>
+        <div class="carousel__dots" aria-label="Carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">What Clients Say</h2>
+
+      <div class="testimonials">
+        <figure class="testimonial card">
+          <blockquote>“I don’t have time to search. Two weeks in, I already had three great dates.”</blockquote>
+          <figcaption>— Mark, VP Sales</figcaption>
+        </figure>
+        <figure class="testimonial card">
+          <blockquote>“Tier 3 is worth it: they arranged everything. I just showed up and enjoyed.”</blockquote>
+          <figcaption>— Daniel, Founder</figcaption>
+        </figure>
+        <figure class="testimonial card">
+          <blockquote>“The process is clean and respectful. I feel safe.”</blockquote>
+          <figcaption>— Ara, Candidate</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container">
+      <h2 class="section__title">FAQ</h2>
+      <div class="faq">
+        <details>
+          <summary>How do you protect privacy?</summary>
+          <p>City-level only, and conversations stay in-platform until there is mutual consent.</p>
+        </details>
+        <details>
+          <summary>How many profiles will I receive?</summary>
+          <p>Up to 20 curated profiles per day depending on the plan.</p>
+        </details>
+        <details>
+          <summary>Do you offer refunds?</summary>
+          <p>We’re a service-based platform. Each tier has a clear policy—contact us if you have concerns.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="cta">
+    <div class="container cta__box">
+      <h2>Ready for curated dates?</h2>
+      <p>Set your preferences and start receiving your daily shortlist today.</p>
+      <a href="#pricing" class="btn btn--primary btn--lg">Choose a Plan</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="assets/images/truematch-mark.svg" alt="TrueMatch logo small" class="footer-logo" />
+        <p class="muted">© <span id="year"></span> TrueMatch. All rights reserved.</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#" class="muted">Terms</a>
+        <a href="#" class="muted">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

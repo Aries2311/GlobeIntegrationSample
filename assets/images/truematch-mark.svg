@@ -1,0 +1,28 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tmg1" x1="28" y1="24" x2="228" y2="232" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#64E9EE"></stop>
+      <stop offset="1" stop-color="#3AAFB9"></stop>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="b"></feGaussianBlur>
+      <feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+    </filter>
+  </defs>
+
+  <!-- outer ring -->
+  <circle cx="128" cy="128" r="104" stroke="url(#tmg1)" stroke-width="8" opacity=".9"></circle>
+  <circle cx="128" cy="128" r="104" stroke="url(#tmg1)" stroke-width="8" opacity=".18" filter="url(#glow)"></circle>
+  <circle cx="128" cy="128" r="78" stroke="#FFFFFF" stroke-opacity=".08" stroke-width="2"></circle>
+
+  <!-- Stylized T -->
+  <path d="M70 88h116" stroke="#EAF2F8" stroke-linecap="round" stroke-width="20"></path>
+  <path d="M128 96v80" stroke="#EAF2F8" stroke-linecap="round" stroke-width="20"></path>
+
+  <!-- location pin + heart -->
+  <g transform="translate(152 84)" filter="url(#glow)">
+    <path d="M36 0c20 0 36 16 36 36 0 26-24 48-34 59a4 4 0 0 1-5 0C23 84 0 62 0 36 0 16 16 0 36 0z" fill="url(#tmg1)"></path>
+    <path d="M36 20c-5 0-10 3-12 8-3-5-7-8-12-8-9 0-16 7-16 16 0 14 18 22 29 30 1 1 2 1 3 0 11-8 29-16 29-30 0-9-7-16-16-16-5 0-10 3-12 8-3-5-7-8-12-8z" fill="#001011" opacity=".9"></path>
+  </g>
+</svg>
