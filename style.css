@@ -499,3 +499,48 @@ img{ display:block; max-width:100%; height:auto }
 
 /* ensure the loading skeleton never blocks scroll */
 .globe-embed::before{ pointer-events: none; }
+/* Patayin ang anumang overlay sa globe wrapper */
+.globe-embed::before { display: none !important; content: none !important; }
+.globe-embed,
+.globe-embed > iframe {
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  outline: none !important;
+  border: 0 !important;
+}
+/* === Ring killer: trim the hit circle a few px so any canvas rim won't show === */
+.globe-embed > iframe{
+  clip-path: circle(calc(50% - 0px) at 50% 50%);
+}
+
+@supports (-webkit-mask-image: radial-gradient(transparent)) {
+  .globe-embed > iframe{
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, #fdfdfd calc(50% - 20px), transparent calc(50% - 1000px));
+            mask-image: radial-gradient(circle at 50% 50%, #ffffff calc(50% - 20px), transparent calc(50% - 1000px));
+  }
+}
+/* === Globe ring killer (remove rim completely) === */
+:root{
+  /* Ilang pixels ang puputulin natin sa radius ng bilog (responsive) */
+  --globe-trim: clamp(14px, 2.8vw, 26px);
+  --globe-trim-soft: calc(var(--globe-trim) - 1px); /* 1px feather para malinis ang edge */
+}
+
+/* Putulin ang visible/clickable circle ng iframe para di makita ang outer rim ng canvas */
+.globe-embed > iframe{
+  /* important para talunin ang mas naunang 50% circle rule */
+  clip-path: circle(calc(50% - var(--globe-trim)) at 50% 50%) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border: 0 !important;
+}
+
+/* Cross-browser mask fallback (Safari/WebKit) */
+@supports (-webkit-mask-image: radial-gradient(#000, #000)) {
+  .globe-embed > iframe{
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 calc(50% - var(--globe-trim)), transparent calc(50% - var(--globe-trim-soft)));
+            mask-image: radial-gradient(circle at 50% 50%, #000 calc(50% - var(--globe-trim)), transparent calc(50% - var(--globe-trim-soft)));
+  }
+}
