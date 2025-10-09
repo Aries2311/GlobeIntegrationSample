@@ -543,4 +543,28 @@ img{ display:block; max-width:100%; height:auto }
     -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 calc(50% - var(--globe-trim)), transparent calc(50% - var(--globe-trim-soft)));
             mask-image: radial-gradient(circle at 50% 50%, #000 calc(50% - var(--globe-trim)), transparent calc(50% - var(--globe-trim-soft)));
   }
+}/* === Globe ring killer (remove rim completely) === */
+:root{
+  --globe-trim: clamp(14px, 2.8vw, 26px);
+  --globe-trim-soft: calc(var(--globe-trim) - 1px);
 }
+
+.globe-embed > iframe{
+  clip-path: circle(calc(50% - var(--globe-trim)) at 50% 50%) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  border: 0 !important;
+}
+
+/* Safari/WebKit mask fallback */
+@supports (-webkit-mask-image: radial-gradient(#000, #000)) {
+  .globe-embed > iframe{
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 calc(50% - var(--globe-trim)), transparent calc(50% - var(--globe-trim-soft)));
+            mask-image: radial-gradient(circle at 50% 50%, #000 calc(50% - var(--globe-trim)), transparent calc(50% - var(--globe-trim-soft)));
+  }
+}
+
+/* alisin ang anumang overlay skeleton/ring kung meron pa */
+.globe-embed::before { display: none !important; content: none !important; }
+
