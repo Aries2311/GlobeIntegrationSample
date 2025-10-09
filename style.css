@@ -483,3 +483,19 @@ img{ display:block; max-width:100%; height:auto }
 }
 .globe-embed.is-loaded::before{ display: none; }
 .globe-embed.is-loaded > iframe{ opacity: 1; }
+/* Make the iframe only capture events on a perfect circle */
+.globe-embed > iframe{
+  /* Only the circle is clickable/scroll-blocking */
+  clip-path: circle(50% at 50% 50%);
+}
+
+/* Better cross-browser hit testing (optional fallback) */
+@supports (-webkit-mask-image: radial-gradient(#000, #000)) {
+  .globe-embed > iframe{
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 50%, transparent 51%);
+            mask-image: radial-gradient(circle at 50% 50%, #000 50%, transparent 51%);
+  }
+}
+
+/* ensure the loading skeleton never blocks scroll */
+.globe-embed::before{ pointer-events: none; }
